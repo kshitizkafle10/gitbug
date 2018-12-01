@@ -20,7 +20,7 @@ namespace BugTrace
          * intiliazing the variables
          * establishing the connection for the dashboard
          */
-
+        MySqlCommand cmd;
         string id;
         /// <summary>
         /// 
@@ -186,12 +186,9 @@ namespace BugTrace
             else
             {
 
-                MemoryStream mm = new MemoryStream();
-                pimage.Image.Save(mm, pimage.Image.RawFormat);
-                byte[] b = mm.ToArray();
 
                 string qry = "insert into product (project_name,line_num_start,line_num_end,class_name,method,issued_date,description,author,source_file,image) "
-    + "values (@pname,@pstart,@pend,@pclass,@pmethod,@pdate,@pdesc,@aname,@psource,@pimage)";
+    + "values (@pname,@pstart,@pend,@pclass,@pmethod,@pdate,@pdesc,@aname,@psource)";
                 MySqlCommand cmd = new MySqlCommand(qry, connection);
                 cmd.Parameters.AddWithValue("@pname", pname.Text);
                 cmd.Parameters.AddWithValue("@pstart", pstart.Text);
@@ -202,7 +199,7 @@ namespace BugTrace
                 cmd.Parameters.AddWithValue("@pdesc", pdesc.Text);
                 cmd.Parameters.AddWithValue("@aname", aname.Text);
                 cmd.Parameters.AddWithValue("@psource", psource.Text);
-                cmd.Parameters.AddWithValue("@pimage", b);
+                
 
 
                 if (cmd.ExecuteNonQuery() == 1)
@@ -285,20 +282,7 @@ namespace BugTrace
         /// <param name="e"></param>
         private void button1_Click_1(object sender, EventArgs e)
         {
-            try
-            {
-                OpenFileDialog open = new OpenFileDialog(); //opening fileexplore
-
-                open.Filter = "Choose Image(*.jpg; *.png; *." + "gif)|*.jpg; *.png; *.gif"; //filtering out the diffreent extension photos
-                if (open.ShowDialog() == DialogResult.OK)
-                {
-                    pimage.Image = Image.FromFile(open.FileName); //choosing the the image
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            
 
 
         }
@@ -324,13 +308,6 @@ namespace BugTrace
 
         private void pdesc_TextChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-
 
         }
         /// <summary>
@@ -563,26 +540,6 @@ namespace BugTrace
         {
 
 
-            String search_text = usearch.Text;
-
-
-            MySqlCommand command = new MySqlCommand("select * from register where Name like '" + search_text + "%'", connection);
-            connection.Open();
-            MySqlDataReader daa = command.ExecuteReader();
-
-
-            listView1.Items.Clear();
-            while (daa.Read())
-            {
-
-                ListViewItem lvt = new ListViewItem(daa["Name"].ToString());
-                lvt.SubItems.Add(daa["Email"].ToString());
-                lvt.SubItems.Add(daa["Username"].ToString());
-                lvt.SubItems.Add(daa["Gender"].ToString());
-                lvt.SubItems.Add(daa["Role"].ToString());
-                listView1.Items.Add(lvt);//adding every rows data in the listview
-            }
-            connection.Close();
         }
 
         private void psource_TextChanged(object sender, EventArgs e)
@@ -876,6 +833,117 @@ namespace BugTrace
             connection.Close();//connection is closed
         }
 
+        private void label30_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
+
+            //setting configuration
+
+            MySqlConnection con = new MySqlConnection("server=localhost;database = reporter;username =buggy;password = "); //setting up a profile to establish connection between c# and mysql
+            con.Open();
+
+            //validation if it is empty
+            //comparing password and confirm password
+            if (rconfirm.Text != rpassword.Text)
+            {
+                MessageBox.Show("confirm password not matching with new passsword");
+                rconfirm.Focus();
+
+            }
+
+
+            if (rname.Text == string.Empty)
+            {
+                MessageBox.Show("name is required");
+            }
+            else if (rmail.Text == string.Empty)
+            {
+                MessageBox.Show("mail is required");
+            }
+            else if (rusername.Text == string.Empty)
+            {
+                MessageBox.Show("username is required");
+            }
+            else if (rpassword.Text == string.Empty)
+            {
+                MessageBox.Show("password is required");
+            }
+            else if (rconfirm.Text == string.Empty)
+            {
+                MessageBox.Show("password is required");
+
+            }
+            else if (rgender.Text == string.Empty)
+            {
+                MessageBox.Show("gender is required");
+            }
+            else if (rrole.Text == string.Empty)
+            {
+                MessageBox.Show("role is required");
+            }
+            else if (rterms.Text == string.Empty)
+            {
+                MessageBox.Show("check is required");
+            }
+
+            else
+            {
+                //inserting the data for registration
+                string qry = "insert into register(Name,Email,Username,Password,c_password,gender,role,terms) values " + "('" + rname.Text + "', '" + rmail.Text + "', '"
+                    + rusername.Text + "','" + rpassword.Text + "','" + rconfirm.Text + "','" + rgender.Text + "', '" + rrole.Text + "','" + rterms.Text + "')";
+               cmd = new MySqlCommand(qry, con);
+
+                /*
+                 * try is a type of block statement which may raise exception at a runtime.
+                 * Catch is a statement which handles the exception if try block gets error
+                */
+                try
+                {
+                    if (cmd.ExecuteNonQuery() == 1) //return the number of row affected
+                    {
+                        MessageBox.Show("user added");
+                    }
+                    else
+                    {
+                        MessageBox.Show("not inserted");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+            }
+            con.Close(); //connection is closed
+
+            connection.Open();
+            MySqlCommand comd = new MySqlCommand("select Name,Email,Username,Gender,Role from register", connection); //selecting column name from database 
+            /*
+             * MySqlDataReader send the row of datas
+             * To create mysqldatareader ,execute reader method must used to send a command to the connection.
+             * */
+
+            MySqlDataReader data = comd.ExecuteReader();
+            listView1.Items.Clear();
+            while (data.Read())
+            {
+                ListViewItem lvt = new ListViewItem(data["Name"].ToString());
+                lvt.SubItems.Add(data["Email"].ToString());
+                lvt.SubItems.Add(data["Username"].ToString());
+                lvt.SubItems.Add(data["Gender"].ToString());
+                lvt.SubItems.Add(data["Role"].ToString());
+                listView1.Items.Add(lvt);//adding every rows data in the listview
+            }
+            connection.Close();//connection is closed
+        }
+
+
     }
 }
+
 
