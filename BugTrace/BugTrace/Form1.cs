@@ -13,6 +13,9 @@ using OpenQA.Selenium.Chrome;
 
 namespace BugTrace
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public partial class Form1 : Form
     {
 
@@ -26,10 +29,16 @@ namespace BugTrace
            
     }
        //initiliazing variables
+       /// <summary>
+       /// 
+       /// </summary>
         public string rol;
+        /// <summary>
+        /// 
+        /// </summary>
         public string uid;
 
-        MySqlConnection conn = new MySqlConnection("server=localhost;database = reporter;username =jonish;password = jonish"); //setting up a profile to establish connection between c# and mysql
+        MySqlConnection conn = new MySqlConnection("server=localhost;database = reporter;username =buggy;password = "); //setting up a profile to establish connection between c# and mysql
 
         private void Form1_Load(object sender, EventArgs e)
         {

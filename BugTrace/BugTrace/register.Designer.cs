@@ -112,6 +112,7 @@
             this.rmail.Size = new System.Drawing.Size(272, 17);
             this.rmail.TabIndex = 5;
             this.rmail.Text = "EMAIL";
+            this.rmail.TextChanged += new System.EventHandler(this.rmail_TextChanged);
             // 
             // rpassword
             // 

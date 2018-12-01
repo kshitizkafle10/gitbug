@@ -22,12 +22,15 @@ namespace BugTrace
          */
 
         string id;
+        /// <summary>
+        /// 
+        /// </summary>
         public string prid;
         string[] store = new string[6];
 
 
 
-        MySqlConnection connection = new MySqlConnection("server=localhost; database=reporter; username=jonish; password =jonish "); //setting up a profile to establish connection between c# and mysql
+        MySqlConnection connection = new MySqlConnection("server=localhost;database = reporter;username =buggy;password = "); //setting up a profile to establish connection between c# and mysql
 
         /// <summary>
         /// getting the username

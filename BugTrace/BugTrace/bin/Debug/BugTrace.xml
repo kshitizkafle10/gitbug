@@ -11,6 +11,11 @@
             In this program bug is added by tester and admin. Programmer solved the bug.
             </summary>
         </member>
+        <member name="F:BugTrace.dashboard.prid">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="M:BugTrace.dashboard.#ctor(System.String,System.String,System.String,System.String)">
             <summary>
             getting the username
@@ -143,9 +148,24 @@
             the contents of this method with the code editor.
             </summary>
         </member>
+        <member name="T:BugTrace.Form1">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="M:BugTrace.Form1.#ctor">
             <summary>
             intiliazing the role type and id for the users
+            
+            </summary>
+        </member>
+        <member name="F:BugTrace.Form1.rol">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:BugTrace.Form1.uid">
+            <summary>
             
             </summary>
         </member>
@@ -191,6 +211,11 @@
             the contents of this method with the code editor.
             </summary>
         </member>
+        <member name="T:BugTrace.Form2">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="M:BugTrace.Form2.#ctor(System.Int32)">
             <summary>
             here  fettch th id for editing bug
@@ -231,6 +256,11 @@
         <member name="M:BugTrace.Program.Main">
             <summary>
             The main entry point for the application.
+            </summary>
+        </member>
+        <member name="T:BugTrace.register">
+            <summary>
+            
             </summary>
         </member>
         <member name="M:BugTrace.register.#ctor">

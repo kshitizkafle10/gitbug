@@ -15,7 +15,7 @@ namespace BugTrace
     {
         int abc; //initiliazing data
         string[] store = new string[10];//initiliazing dataS
-        MySqlConnection con = new MySqlConnection("server=localhost;database = reporter;username =buggy;password = "); //setting up a profile to establish connection between c# and mysql
+        MySqlConnection connection = new MySqlConnection("server=localhost;database = reporter;username =buggy;password = "); //setting up a profile to establish connection between c# and mysql
 
         /// <summary>
         /// here  fettch th id for editing bug
@@ -94,7 +94,7 @@ namespace BugTrace
         /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
-            MySqlConnection connection = new MySqlConnection("server=localhost; database=reporter; username=jonish; password =jonish "); //setting up a profile to establish connection between c# and mysql
+            MySqlConnection connection = new MySqlConnection("server=localhost;database = reporter;username =buggy;password = "); //setting up a profile to establish connection between c# and mysql
             connection.Open();
 
         
@@ -109,6 +109,11 @@ namespace BugTrace
         }
 
         private void pdesc_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
         {
 
         }

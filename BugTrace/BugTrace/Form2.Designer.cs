@@ -1,5 +1,8 @@
 ﻿namespace BugTrace
 {
+    /// <summary>
+    /// 
+    /// </summary>
     partial class Form2
     {
         /// <summary>
@@ -31,10 +34,8 @@
             this.aname = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
             this.pdesc = new ICSharpCode.TextEditor.TextEditorControl();
-            this.button1 = new System.Windows.Forms.Button();
             this.pend = new System.Windows.Forms.ComboBox();
             this.pstart = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.psource = new System.Windows.Forms.TextBox();
             this.pdate = new System.Windows.Forms.TextBox();
             this.pmethod = new System.Windows.Forms.TextBox();
@@ -48,15 +49,14 @@
             this.pname = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pimage = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pimage)).BeginInit();
+            this.label9 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // aname
             // 
             this.aname.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.aname.Location = new System.Drawing.Point(559, 345);
+            this.aname.Location = new System.Drawing.Point(188, 369);
             this.aname.Name = "aname";
             this.aname.Size = new System.Drawing.Size(206, 30);
             this.aname.TabIndex = 50;
@@ -65,7 +65,7 @@
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.label23.Location = new System.Drawing.Point(446, 343);
+            this.label23.Location = new System.Drawing.Point(69, 379);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(107, 20);
             this.label23.TabIndex = 49;
@@ -74,21 +74,12 @@
             // pdesc
             // 
             this.pdesc.IsReadOnly = false;
-            this.pdesc.Location = new System.Drawing.Point(450, 71);
+            this.pdesc.Location = new System.Drawing.Point(188, 424);
             this.pdesc.Name = "pdesc";
-            this.pdesc.Size = new System.Drawing.Size(315, 216);
+            this.pdesc.Size = new System.Drawing.Size(315, 101);
             this.pdesc.TabIndex = 48;
-            this.pdesc.Text = "Paste your bug here...";
+            this.pdesc.Text = "FILL THIS";
             this.pdesc.Load += new System.EventHandler(this.pdesc_Load);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(222, 413);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 47;
-            this.button1.Text = "upload";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // pend
             // 
@@ -599,7 +590,6 @@
             this.pend.Name = "pend";
             this.pend.Size = new System.Drawing.Size(81, 28);
             this.pend.TabIndex = 46;
-            this.pend.Text = "END";
             // 
             // pstart
             // 
@@ -1110,17 +1100,6 @@
             this.pstart.Name = "pstart";
             this.pstart.Size = new System.Drawing.Size(81, 28);
             this.pstart.TabIndex = 45;
-            this.pstart.Text = "START";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.label9.Location = new System.Drawing.Point(59, 387);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(137, 20);
-            this.label9.TabIndex = 44;
-            this.label9.Text = "IMAGE UPLOAD";
             // 
             // psource
             // 
@@ -1133,7 +1112,7 @@
             // pdate
             // 
             this.pdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.pdate.Location = new System.Drawing.Point(188, 272);
+            this.pdate.Location = new System.Drawing.Point(186, 219);
             this.pdate.Name = "pdate";
             this.pdate.Size = new System.Drawing.Size(215, 30);
             this.pdate.TabIndex = 40;
@@ -1141,7 +1120,7 @@
             // pmethod
             // 
             this.pmethod.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.pmethod.Location = new System.Drawing.Point(188, 225);
+            this.pmethod.Location = new System.Drawing.Point(186, 266);
             this.pmethod.Name = "pmethod";
             this.pmethod.Size = new System.Drawing.Size(215, 30);
             this.pmethod.TabIndex = 39;
@@ -1168,7 +1147,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.label7.Location = new System.Drawing.Point(552, 299);
+            this.label7.Location = new System.Drawing.Point(54, 424);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(122, 20);
             this.label7.TabIndex = 36;
@@ -1178,7 +1157,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.label6.Location = new System.Drawing.Point(61, 279);
+            this.label6.Location = new System.Drawing.Point(59, 238);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(121, 20);
             this.label6.TabIndex = 35;
@@ -1188,7 +1167,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.label5.Location = new System.Drawing.Point(80, 235);
+            this.label5.Location = new System.Drawing.Point(80, 276);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(83, 20);
             this.label5.TabIndex = 34;
@@ -1210,14 +1189,15 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.label3.Location = new System.Drawing.Point(100, 127);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 20);
+            this.label3.Size = new System.Drawing.Size(63, 20);
             this.label3.TabIndex = 32;
-            this.label3.Text = "LINE NO";
+            this.label3.Text = "START";
             // 
             // pname
             // 
+            this.pname.BackColor = System.Drawing.SystemColors.Window;
             this.pname.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pname.Location = new System.Drawing.Point(188, 71);
+            this.pname.Location = new System.Drawing.Point(188, 74);
             this.pname.Name = "pname";
             this.pname.Size = new System.Drawing.Size(215, 30);
             this.pname.TabIndex = 31;
@@ -1236,23 +1216,15 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(296, 9);
+            this.label1.Location = new System.Drawing.Point(168, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(217, 39);
+            this.label1.Size = new System.Drawing.Size(179, 39);
             this.label1.TabIndex = 29;
-            this.label1.Text = "BUG TRACE";
-            // 
-            // pimage
-            // 
-            this.pimage.Location = new System.Drawing.Point(222, 357);
-            this.pimage.Name = "pimage";
-            this.pimage.Size = new System.Drawing.Size(109, 50);
-            this.pimage.TabIndex = 43;
-            this.pimage.TabStop = false;
+            this.label1.Text = "EDIT BUG";
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(403, 407);
+            this.button2.Location = new System.Drawing.Point(197, 531);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(90, 34);
             this.button2.TabIndex = 51;
@@ -1260,20 +1232,29 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.label9.Location = new System.Drawing.Point(275, 130);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(45, 20);
+            this.label9.TabIndex = 52;
+            this.label9.Text = "END";
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(507, 574);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.aname);
             this.Controls.Add(this.label23);
             this.Controls.Add(this.pdesc);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.pend);
             this.Controls.Add(this.pstart);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.pimage);
             this.Controls.Add(this.psource);
             this.Controls.Add(this.pdate);
             this.Controls.Add(this.pmethod);
@@ -1289,7 +1270,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Form2";
             this.Text = "Form2";
-            ((System.ComponentModel.ISupportInitialize)(this.pimage)).EndInit();
+            this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1300,11 +1281,8 @@
         private System.Windows.Forms.TextBox aname;
         private System.Windows.Forms.Label label23;
         private ICSharpCode.TextEditor.TextEditorControl pdesc;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox pend;
         private System.Windows.Forms.ComboBox pstart;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.PictureBox pimage;
         private System.Windows.Forms.TextBox psource;
         private System.Windows.Forms.TextBox pdate;
         private System.Windows.Forms.TextBox pmethod;
@@ -1319,5 +1297,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label9;
     }
 }

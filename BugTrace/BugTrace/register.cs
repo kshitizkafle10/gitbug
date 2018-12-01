@@ -12,6 +12,9 @@ using MySql.Data.MySqlClient;
 
 namespace BugTrace
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public partial class register : Form
     {
 
@@ -160,6 +163,11 @@ namespace BugTrace
         }
 
         private void rusername_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rmail_TextChanged(object sender, EventArgs e)
         {
 
         }
